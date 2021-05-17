@@ -1,12 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import BooksList from "./BooksList";
 //import classes from './BookstoreItems.module.css';
 
 const BookstoreItems = (props) => {
+  const [booksSelected, setBooksSelected] = useState(true);
+
+  const booksHandler = () => {
+    setBooksSelected(true);
+  } 
+
   return (
     <React.Fragment>
-      <h2>Hello World</h2>
-      <BooksList books={props.books} />
+      <button type="button" onClick={booksHandler}>Show Books</button>
+      {booksSelected ? <BooksList books={props.books} /> 
+          : <h2>ADD MOVIES LIST ELEMENT HERE</h2>}
     </React.Fragment>
   );
 };
