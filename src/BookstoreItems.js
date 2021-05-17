@@ -1,9 +1,13 @@
 import React from 'react';
-import classes from './BookstoreItems.module.css';
+import BooksList from './BooksList';
+//import classes from './BookstoreItems.module.css';
 
 const BookstoreItems = props => {
     return (
-        <h2>Hello World</h2>
+        <React.Fragment>
+            <h2>Hello World</h2>
+            <BooksList books={props.books}/>
+        </React.Fragment>
     );
 };
 

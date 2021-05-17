@@ -38,7 +38,7 @@ const App = () => {
     <div>
       <h2>Let's get started!</h2>
       <BookstoreFeatured />
-      <BookstoreItems />
+      <BookstoreItems books={BOOKS} />
     </div>
   );
 };
