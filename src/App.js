@@ -1,5 +1,5 @@
-import BookstoreFeatured from "./BookstoreFeatured";
-import BookstoreItems from "./BookstoreItems";
+import BookstoreFeatured from "./components/BookstoreFeatured";
+import BookstoreItems from "./components/BookstoreItems";
 
 const BOOKS = [
   {
