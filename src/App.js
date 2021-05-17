@@ -1,5 +1,5 @@
-import BookstoreFeatured from "./BookstoreFeatured";
-import BookstoreItems from "./BookstoreItems";
+import BookstoreFeatured from "./components/BookstoreFeatured";
+import BookstoreItems from "./components/BookstoreItems";
 
 const BOOKS = [
   {
@@ -38,7 +38,7 @@ const App = () => {
     <div>
       <h2>Let's get started!</h2>
       <BookstoreFeatured />
-      <BookstoreItems />
+      <BookstoreItems books={BOOKS} />
     </div>
   );
 };
