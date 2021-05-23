@@ -33,12 +33,23 @@ const BOOKS = [
   },
 ];
 
+const MOVIES = [
+  {
+    id: "m1",
+    title: "It's A Wonderful Life",
+    director: "Frank Capra",
+    year: 1946,
+    description:
+      "Consectetur duis pariatur deserunt ut aute in magna eu proident exercitation consectetur qui irure culpa.",
+  },
+];
+
 const App = () => {
   return (
     <div>
       <h2>Let's get started!</h2>
       <BookstoreFeatured />
-      <BookstoreItems books={BOOKS} />
+      <BookstoreItems books={BOOKS} movies={MOVIES} />
     </div>
   );
 };
