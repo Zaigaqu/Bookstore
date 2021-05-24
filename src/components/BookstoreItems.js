@@ -1,25 +1,35 @@
-import React, { useState } from "react";
+import React, { useReducer } from "react";
 import BooksList from "./BooksList";
 import MoviesList from "./MoviesList";
 //import classes from './BookstoreItems.module.css';
 
+const selectionReducer = (state, action) => {
+  if(action === 'books') {
+    return 'Books';
+  }
+  if (action === 'movies') {
+    return 'Movies';
+  }
+};
+
 const BookstoreItems = (props) => {
-  const [booksSelected, setBooksSelected] = useState(true);
+  const [selectionState, dispatchSelection] = useReducer(selectionReducer, 'Books',);
 
   const booksHandler = () => {
-    setBooksSelected(true);
+    dispatchSelection('books');
   }
 
   const moviesHandler = () => {
-    setBooksSelected(false);
+    dispatchSelection('movies');
   }
 
   return (
     <React.Fragment>
       <button type="button" onClick={booksHandler}>Show Books</button>
       <button type="button" onClick={moviesHandler}>Show Movies</button>
-      {booksSelected ? <BooksList books={props.books} /> 
-          : <MoviesList movies={props.movies} />}
+      {(selectionState === 'Books') ? <BooksList books={props.books} />
+          : (selectionState === 'Movies') ? <MoviesList movies={props.movies} />
+          : null}
     </React.Fragment>
   );
 };
