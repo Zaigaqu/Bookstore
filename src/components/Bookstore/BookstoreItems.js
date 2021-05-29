@@ -1,6 +1,6 @@
 import React, { useReducer } from "react";
-import BooksList from "./BooksList";
-import MoviesList from "./MoviesList";
+import BooksList from "../Items/Books/BooksList"
+import MoviesList from "../Items/Movies/MoviesList";
 //import classes from './BookstoreItems.module.css';
 
 const selectionReducer = (state, action) => {
@@ -27,6 +27,7 @@ const BookstoreItems = (props) => {
     <React.Fragment>
       <button type="button" onClick={booksHandler}>Show Books</button>
       <button type="button" onClick={moviesHandler}>Show Movies</button>
+
       {(selectionState === 'Books') ? <BooksList books={props.books} />
           : (selectionState === 'Movies') ? <MoviesList movies={props.movies} />
           : null}
