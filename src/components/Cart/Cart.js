@@ -5,7 +5,7 @@ const Cart = (props) => {
     <Fragment>
       <div>CART ICON</div>
       <div>BADGE</div>
-      <div>VIEW CART</div>
+      <button>VIEW CART</button>
     </Fragment>
   );
 };
